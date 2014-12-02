@@ -7,9 +7,17 @@ class LikesController < ApplicationController
          flash[:notice] = "Qwato has been liked : #{@qwato.likes.count}"
          redirect_to qwatos_path     
       else
+        
         #render js: 'alert(\'You have like this before\');'
-       flash[:success] = 'qwatos has been liked already'
+        if current_user.liked_before?(@qwato)
+          flash[:success] = 'qwatos has been liked already'
         redirect_to qwatos_path
+        else
+          flash[:success] = 'qwatos has been disliked already'
+        redirect_to qwatos_path
+        end
+
+       
       end
       
     else

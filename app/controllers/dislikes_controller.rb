@@ -8,8 +8,14 @@ class DislikesController < ApplicationController
          redirect_to qwatos_path     
       else
         #render js: 'alert(\'You have like this before\');'
-       flash[:success] = 'qwatos has been disliked already'
+        if current_user.disliked_before?(@qwato)
+          flash[:success] = 'qwatos has been disliked already'
         redirect_to qwatos_path
+        else
+          flash[:success] = 'qwatos has been liked already'
+        redirect_to qwatos_path
+        end
+       
       end
       
     else
