@@ -8,6 +8,10 @@
 			<br/>
 			<% if user_signed_in?  %>
 					
+					<!-- Twitter -->
+				<a href="http://twitter.com/home?status=<%= qwato.image_url %>" title="Share on Twitter" target="_blank" class="btn btn-twitter"><i class="fa fa-twitter"></i> Twitter</a>
+				 <!-- Facebook -->
+				<a href="https://www.facebook.com/sharer/sharer.php?u=<%= qwato.image_url %>" title="Share on Facebook" target="_blank" class="btn btn-facebook"><i class="fa fa-facebook"></i> Facebook</a>
 				
 
 				<%= link_to(qwato_likes_path(qwato),
