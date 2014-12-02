@@ -1,0 +1,36 @@
+
+
+<div class="row">
+	<div class="col-sm-6 col-md-4 col-md-offset-4">
+	<% @qwatos.each do |qwato| %>
+		<div id= "qwato_<%= qwato.id %>" class="thumbnail ">
+			<%= image_tag qwato.image_url , alt: qwato.quote  %>
+			<br/>
+			<% if user_signed_in?  %>
+					
+				
+
+				<%= link_to(qwato_likes_path(qwato),
+    				method: :post ) do %>
+    			<%= content_tag('i', nil, class: 'fa fa-thumbs-up fa-2x' ) %>
+				<% end %>
+			<%= link_to(qwato_dislikes_path(qwato),
+    				method: :post ) do %>
+    			<%= content_tag('i', nil, class: 'fa fa-thumbs-down fa-2x' ) %>
+				<% end %>
+				
+			<% else %>
+				<%= button_to "share" , user_registration_path , class: "btn btn-primary"%>
+				<%= button_to "like", user_registration_path, class: "btn btn-success" %>
+			<% end %>
+			
+		</div>
+		<br/>
+		<% end %>
+
+	</div>
+</div>
+
+
+
+	
