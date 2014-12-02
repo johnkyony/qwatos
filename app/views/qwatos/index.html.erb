@@ -14,11 +14,11 @@
 				<a href="https://www.facebook.com/sharer/sharer.php?u=<%= qwato.image_url %>" title="Share on Facebook" target="_blank" class="btn btn-facebook"><i class="fa fa-facebook"></i> Facebook</a>
 				
 
-				<%= link_to(qwato_likes_path(qwato),
+				<%= link_to(user_likes_path(qwato),
     				method: :post ) do %>
     			<%= content_tag('i', nil, class: 'fa fa-thumbs-up fa-2x' ) %>
 				<% end %>
-			<%= link_to(qwato_dislikes_path(qwato),
+			<%= link_to(user_dislikes_path(qwato),
     				method: :post ) do %>
     			<%= content_tag('i', nil, class: 'fa fa-thumbs-down fa-2x' ) %>
 				<% end %>
