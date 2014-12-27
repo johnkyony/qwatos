@@ -1,11 +1,13 @@
 Rails.application.routes.draw do
   #get 'likes_streams/index'
 
-  resources :likes_streams
+  
 
   devise_for :users
   
   resources :qwatos
+
+  resources :likes
 
   resources :artists do 
     resources :qwatos do

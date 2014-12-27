@@ -6,7 +6,10 @@ class QwatosController < ApplicationController
   end
 
   
-
+  def show
+    @qwato = Qwato.find(qwatos_params)
+    
+  end
 
 
   private

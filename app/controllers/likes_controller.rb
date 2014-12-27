@@ -28,16 +28,18 @@ class LikesController < ApplicationController
     
   end
   def show
-   
-   
-   
+    @likes = Like.find(params[:id])
     
   end
+
   def index
-     @user = User.find(params[:user_id])
-    @likes = Like.find_by_id(params[:qwato_id]).where(user_id: @user)
-     redirect_to user_like_path
+   @like = Like.where( :user_id => current_user.id)
+   redirect_to qwatos_path(@like.qwato_id)
+
+   
+       
   end
+  
   private
   
 

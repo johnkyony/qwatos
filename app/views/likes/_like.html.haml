@@ -1,7 +1,7 @@
 .row
   .col-sm-6.col-md-4.col-md-offset-4
-    - @user.qwato.likes.each do |like|
+    - @like.each do |like|
       .thumbnail{:id => " "}
         %p
-          = like.qwato_id
+          =  like.qwato_id
       %br/
