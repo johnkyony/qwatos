@@ -17,7 +17,9 @@ gem "simple_form"
 gem "high_voltage"
 gem "devise"
 gem "pundit"
+gem "haml-rails"
 group :development do
+  gem "erb2haml"
   gem 'sqlite3'
   gem "guard-bundler"
   gem "guard-minitest"

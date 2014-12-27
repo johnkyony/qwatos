@@ -6,6 +6,13 @@ Rails.application.routes.draw do
   devise_for :users
   
   resources :qwatos
+
+  resources :artists do 
+    resources :qwatos do
+       resources :likes 
+    resources :dislikes
+    end
+  end
  
   resources :users do
    resources :likes , :dislikes do
