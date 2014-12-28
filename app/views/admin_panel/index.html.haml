@@ -1,0 +1,22 @@
+%ul.nav.nav-tabs{role: "tablist"}
+  %li.active 
+    %a{href: "#add_artist" , role: "tab" , "data-toggle" => "tab"}
+      %p Add artist
+    
+  %li
+    %a{href: "#edit_artist" , role: "tab" , "data-toggle" => "tab"}    
+      %p Edit artist 
+    
+  %li
+    %a{href: "#add_qwato" , role: "tab" , "data-toggle" => "tab"}
+      %p Add qwato 
+    
+
+.tab-content
+  .tab-pane.active.fade.in.active#add_artist
+    = render "artist_form"
+  .tab-pane#edit_artist.fade
+    = render "artist_avatar_form"
+  .tab-pane#add_qwato.fade
+    = render "qwato_form"
+

@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
+  #get 'admin_panel/index'
+
   #get 'likes_streams/index'
 
   
-
+  resources :admin_panel
   devise_for :users
   
   resources :qwatos

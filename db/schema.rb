@@ -11,13 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141202175442) do
+ActiveRecord::Schema.define(version: 20141228173454) do
 
   create_table "artists", force: true do |t|
     t.string   "name"
     t.string   "website"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "youtube_channel"
+    t.string   "sound_cloud"
+    t.string   "avatar_url"
   end
 
   create_table "dislikes", force: true do |t|

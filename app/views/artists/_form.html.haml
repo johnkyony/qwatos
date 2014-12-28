@@ -1,0 +1,24 @@
+= form_for @artist do |f|
+  .field
+    = f.label :name
+    %br
+    = f.text_field :name
+  .field
+    = f.label :avatar_url
+    %br 
+    = f.text_field :avatar_url
+  .field
+    = f.label :website 
+    %br
+    = f.text_field :website
+  .field
+    = f.label :youtube_channel
+    %br
+    = f.text_field :youtube_channel
+  .field
+    = f.label :sound_cloud
+    %br 
+    = f.text_field :sound_cloud
+
+  .actions
+    = f.submit

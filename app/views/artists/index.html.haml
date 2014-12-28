@@ -1,2 +1,19 @@
-- @artist.each do |artist|
-  = link_to artist.name , [artist,@qwato]
+.container
+  .row
+    .col-xs-6.col-md-3
+      - @artist.each do |artist|
+        .thumbnail
+          
+          = image_tag artist.avatar_url
+          .caption
+            = link_to artist.name , [artist,@qwato] 
+            = link_to "youtube channel", artist.youtube_channel
+            = link_to "sound cloud" , artist.sound_cloud
+
+            %br
+
+
+
+    
+      
+      

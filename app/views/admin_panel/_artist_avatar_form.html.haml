@@ -1,0 +1,11 @@
+.container
+  .row
+    .col-xs-6.col-md-3
+      - @artist.each do |artist|
+        .thumbnail
+          
+          = image_tag artist.avatar_url
+          .caption
+            = link_to artist.name ,  edit_artist_path(artist)
+            %br
+

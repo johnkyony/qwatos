@@ -1,0 +1,18 @@
+= form_for  (@qwato) , method: :post do |f|
+  
+  .field
+    = f.label :quote
+    %br
+    = f.text_field :quote
+  .field
+    = f.label :image_url
+    %br 
+    = f.text_field :image_url
+  .field
+    = f.label :uploaded_at
+    %br
+    = f.text_field :uploaded_at
+  
+
+  .actions
+    = f.submit
