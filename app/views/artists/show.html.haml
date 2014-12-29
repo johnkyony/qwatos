@@ -1,6 +1,6 @@
 .container
   .row
-    .col-sm-6.col-md-4.col-md-offset-4.hidden-xs
+    .col-sm-6.col-md-4.col-md-offset-4
       - @artist.qwatos.each do |qwato|
         .thumbnail{:id => "qwato_#{qwato.id}"}
           = image_tag qwato.image_url , alt: qwato.quote
