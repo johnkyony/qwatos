@@ -1,14 +1,14 @@
-.container
-  .row
-    .col-xs-6.col-md-3
-      - @artist.each do |artist|
-        .thumbnail
-          
-          = image_tag artist.avatar_url
-          .caption
-            = link_to artist.name , [artist,@qwato] 
-            
-            %br
+
+.row
+  .col-sm-6.col-md-4.col-md-offset-4
+    - @artist.each do |artist|
+      .thumbnail
+        
+        = image_tag artist.avatar_url
+        .caption
+          = link_to artist.name , [artist,@qwato] 
+
+          %br
 
 
 
