@@ -30,8 +30,7 @@ class User < ActiveRecord::Base
   end
 def self.from_omniauth(auth)
   provider = auth.provider
-  uid = auth.uid
-  info = auth.info.symbolize_keys
+  uid = auth.uid  
   user = User.find_or_initialize_by(uid: uid , provider: provider)
   user.email = auth.info.email
   user.name = auth.info.name
