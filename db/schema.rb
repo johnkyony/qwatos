@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141228173454) do
+ActiveRecord::Schema.define(version: 20141230093354) do
 
   create_table "artists", force: true do |t|
     t.string   "name"
@@ -32,6 +32,13 @@ ActiveRecord::Schema.define(version: 20141228173454) do
 
   add_index "dislikes", ["qwato_id"], name: "index_dislikes_on_qwato_id"
   add_index "dislikes", ["user_id"], name: "index_dislikes_on_user_id"
+
+  create_table "facebook_oauth_settings", force: true do |t|
+    t.string   "access_token"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "likes", force: true do |t|
     t.integer  "user_id"

@@ -2,8 +2,8 @@ Rails.application.routes.draw do
   #get 'admin_panel/index'
 
   #get 'likes_streams/index'
-match "/callback" => "facebook#callback" , method: :get
-match "/facebook_profile" => "facebook#facebook_profile" , method: :get
+get "/callback" => "facebook#callback" 
+get "/facebook_profile" => "facebook#facebook_profile" 
 root :to => 'facebook#index'
   
   resources :admin_panel
