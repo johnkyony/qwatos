@@ -1,4 +1,5 @@
 class QwatosController < ApplicationController
+  
  
   def index
     @qwatos = Qwato.all.order("RANDOM()")

@@ -1,4 +1,5 @@
 class DislikesController < ApplicationController
+  before_filter :authenticate_user!
   def create
     if current_user 
       @qwato = Qwato.find_by_id(params[:qwato_id])
