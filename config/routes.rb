@@ -2,7 +2,9 @@ Rails.application.routes.draw do
   #get 'admin_panel/index'
 
   #get 'likes_streams/index'
-
+match "/callback" => "facebook#callback" , method: :get
+match "/facebook_profile" => "facebook#facebook_profile" , method: :get
+root :to => 'facebook#index'
   
   resources :admin_panel
   devise_for :users
@@ -25,5 +27,5 @@ Rails.application.routes.draw do
     end
   end
   
-  root to: 'qwatos#index'
+  #root to: 'qwatos#index'
 end
