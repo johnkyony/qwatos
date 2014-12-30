@@ -79,4 +79,6 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+  config.facebook_id = ENV['facebook_id']
+  config.facebook_key = ENV['facebook_key']
 end
