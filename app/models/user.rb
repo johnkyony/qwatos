@@ -14,7 +14,7 @@ class User < ActiveRecord::Base
 
   has_many :likes
   has_many :dislikes
-
+  has_one :facebook_oath_setting
 
 
 
@@ -28,22 +28,19 @@ class User < ActiveRecord::Base
   def disliked_before?(qwato)
     dislikes.any? {|dislike| dislike.qwato == qwato}
   end
-  def self.from_omniauth(auth)
-    where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
-      user.email = auth.info.email
-      user.password = Devise.friendly_token[0,20]
-      user.name = auth.info.name   # assuming the user model has a name
-      user.image = auth.info.image # assuming the user model has an image
-    end
-  end
-  class User < ActiveRecord::Base
-  def self.new_with_session(params, session)
-    super.tap do |user|
-      if data = session["devise.facebook_data"] && session["devise.facebook_data"]["extra"]["raw_info"]
-        user.email = data["email"] if user.email.blank?
-      end
-    end
-  end
+def self.from_omniauth(auth)
+  provider = auth.provider
+  uid = auth.uid
+  info = auth.info.symbolize_keys
+  user = User.find_or_initialize_by(uid: uid , provider: provider)
+  user.name = auth.info.name
+  user.password = Devise.friendly_token[0,20]
+  user.image = info.image
+  user.save!
+  user
+  
 end
+
+
 end
  
