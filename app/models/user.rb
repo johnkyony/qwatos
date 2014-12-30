@@ -14,7 +14,7 @@ class User < ActiveRecord::Base
 
   has_many :likes
   has_many :dislikes
-  has_one :facebook_oath_setting
+
 
 
 
