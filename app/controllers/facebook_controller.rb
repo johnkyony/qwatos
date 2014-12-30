@@ -1,5 +1,5 @@
 class FacebookController < ApplicationController
-  before_filter :authenticate_user!
+  #before_filter :authenticate_user!
 
    def index
     unless  current_user.facebook_oauth_setting
