@@ -35,7 +35,7 @@ def self.from_omniauth(auth)
   user = User.find_or_initialize_by(uid: uid , provider: provider)
   user.name = auth.info.name
   user.password = Devise.friendly_token[0,20]
-  user.image = info.image
+  user.image = auth.info.image
   user.save!
   user
   
