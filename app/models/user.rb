@@ -33,6 +33,7 @@ def self.from_omniauth(auth)
   uid = auth.uid
   info = auth.info.symbolize_keys
   user = User.find_or_initialize_by(uid: uid , provider: provider)
+  user.email = auth.info.email
   user.name = auth.info.name
   user.password = Devise.friendly_token[0,20]
   user.image = auth.info.image
