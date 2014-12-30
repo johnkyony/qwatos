@@ -5,7 +5,7 @@ Rails.application.routes.draw do
 
   
   resources :admin_panel
-  devise_for :users , :controllers => {:omniauth_callbacks => "user/omniauth_callbacks"}
+  devise_for :users , :controllers => {:omniauth_callbacks => "users/omniauth_callbacks"}
 
   
   resources :qwatos
