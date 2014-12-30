@@ -1,2 +1,14 @@
-- @artist.each do |artist|
-  = link_to artist.name , new_artist_qwato_path(artist)
+.row
+  .col-sm-6.col-md-4.col-md-offset-4
+    - @artist.each do |artist|
+      .thumbnail
+        
+        = image_tag artist.avatar_url
+        .caption
+          = link_to artist.name , new_artist_qwato_path(artist)
+
+          %br
+
+
+
+
