@@ -14,9 +14,10 @@
           = content_tag('i' , nil , class: 'fa fa-thumbs-up fa-2x')
         = link_to(user_dislikes_path(qwato),  method: :post) do
           = content_tag('i' , nil , class: ' fa fa-thumbs-down fa-2x')
+  
 
 %ul.pager
   %li
-    = link_to "Back" , artists_path
+    = link_to "Back" , artists_path 
 
          
