@@ -19,10 +19,10 @@ class LikesController < ApplicationController
     end
     
   end
-  def show
-    @user = User.find(params[:id])
-    @likes = @user.likes
-    
+  def index
+    user = User.find_by_id(params[:user_id])
+    likes = Like.where(user_id: user).pluck(:qwato_id)
+    @qwatos = Qwato.where(id: likes)
   end
 
 end
