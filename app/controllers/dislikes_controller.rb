@@ -1,5 +1,4 @@
 class DislikesController < ApplicationController
-  before_filter :authenticate_user!
   def create
     if current_user 
       @qwato = Qwato.find_by_id(params[:qwato_id])
@@ -9,14 +8,8 @@ class DislikesController < ApplicationController
          redirect_to qwatos_path     
       else
         #render js: 'alert(\'You have like this before\');'
-        if current_user.disliked_before?(@qwato)
-          flash[:success] = 'qwatos has been disliked already'
+       flash[:success] = 'qwatos has been disliked already'
         redirect_to qwatos_path
-        else
-          flash[:success] = 'qwatos has been liked already'
-        redirect_to qwatos_path
-        end
-       
       end
       
     else

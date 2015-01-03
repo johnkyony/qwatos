@@ -8,9 +8,14 @@ Rails.application.routes.draw do
   devise_for :users , :controllers => {:omniauth_callbacks => "users/omniauth_callbacks"}
   
   
-  resources :qwatos
+  resources :qwatos do
+    resources :likes
+    resources :dislikes
 
-  resources :likes
+  end
+
+
+  
 
   resources :artists do 
     resources :qwatos do
