@@ -18,17 +18,13 @@ Rails.application.routes.draw do
   
 
   resources :artists do 
-    resources :qwatos do
-       resources :likes 
-    resources :dislikes
-    end
+    resources :qwatos       
   end
  
   resources :users do
-   resources :likes , :dislikes do
-    resources :qwatos 
+   resources :likes , :dislikes  
     
-    end
+    
   end
   
   root to: 'qwatos#index'
