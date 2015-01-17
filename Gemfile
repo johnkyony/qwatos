@@ -11,6 +11,7 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'spring',        group: :development
 gem "thin"
 gem 'omniauth-facebook'
+gem 'omniauth-twitter'
 gem "slim-rails"
 gem "bootstrap-sass"
 gem "font-awesome-sass"

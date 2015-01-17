@@ -5,7 +5,7 @@ class User < ActiveRecord::Base
 
 
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable ,:omniauthable, :omniauth_providers => [:facebook]
+         :recoverable, :rememberable, :trackable, :validatable ,:omniauthable, :omniauth_providers => [:facebook , :twitter]
   enum role: [:user, :admin]
   after_initialize :set_default_role, :if => :new_record?
 

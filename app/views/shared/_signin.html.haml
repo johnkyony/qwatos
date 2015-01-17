@@ -1,0 +1,19 @@
+.modal.fade
+  .modal-dialog
+    .modal-content
+      .modal-header
+        %button.close{type: "button" ,  "data-dismiss" => "modal" , "aria-hidden" => true}
+          %span{"aria-hidden" => true}
+          %span.sr-only close
+          %h4.modal-title Signin 
+            .modal-body
+              = link_to 'Facebook login' , user_omniauth_authorize_path(:facebook)
+              = link_to 'Twitter login' , '#'
+
+              = link_to 'Email address' , new_user_session_path
+               
+            .modal-footer
+              %button.btn.btn-default{type: "button" , "data-dismiss" => "modal" } close
+
+
+

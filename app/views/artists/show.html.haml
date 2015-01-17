@@ -10,9 +10,9 @@
         %a.btn.btn-primary{:href => "https://www.facebook.com/sharer/sharer.php?u=#{qwato.image_url}", :target => "_blank", :title => "Share on Facebook"}
           %i.fa.fa-facebook
           Facebook
-        = link_to(user_likes_path(qwato) ,  method: :post) do
+        = link_to(qwato_likes_path(qwato) ,  method: :post) do
           = content_tag('i' , nil , class: 'fa fa-thumbs-up fa-2x')
-        = link_to(user_dislikes_path(qwato),  method: :post) do
+        = link_to(qwato_dislikes_path(qwato),  method: :post) do
           = content_tag('i' , nil , class: ' fa fa-thumbs-down fa-2x')
   
 
