@@ -11,9 +11,9 @@
           %i.fa.fa-facebook
           Facebook
         = link_to(qwato_likes_path(qwato) ,  method: :post) do
-          = content_tag('i' , nil , class: 'fa fa-thumbs-up fa-2x')
+          = content_tag('i' , nil , class: 'fa fa-thumbs-up fa-2x pull-right')
         = link_to(qwato_dislikes_path(qwato),  method: :post) do
-          = content_tag('i' , nil , class: ' fa fa-thumbs-down fa-2x')
+          = content_tag('i' , nil , class: ' fa fa-thumbs-down fa-2x pull-right')
   
 
 %ul.pager
