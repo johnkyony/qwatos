@@ -3,7 +3,8 @@ class QwatosController < ApplicationController
  
   def index
     likes_count_id = Like.all.order(id: :desc).pluck(:qwato_id)
-    @qwatos = Qwato.where(id: likes_count_id)
+    qwato = find_by(id: likes_count_id)
+    @qwatos = Qwato.all.order(id: likes_count_id , "RANDOM")
     
   end
 
