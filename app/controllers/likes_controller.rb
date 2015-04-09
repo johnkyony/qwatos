@@ -13,8 +13,8 @@ class LikesController < ApplicationController
       end
       
     else
-      #flash[:warning] = 'you have liked this qwatos before'
-     # redirect_to qwatos_path
+      flash[:warning] = 'you have liked this qwatos before'
+      redirect_to qwatos_path
       #render js:  'alert(\'Your like cannot be saved.\');'
     end
     
