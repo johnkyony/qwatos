@@ -1,7 +1,7 @@
 class TrendingController < ApplicationController
   def index
-     likes_count_id = Like.all.order(id: :desc).pluck(:qwato_id)
-    qwato = find_by(id: likes_count_id)
-    @qwatos = Qwato.all.order(id: likes_count_id)
+     likes_count_id = Like.all.order(created_at: :asc).pluck(:qwato_id)
+    qwato = Qwato.where(id: likes_count_id).pluck(:id)
+    @qwatos = Qwato.where(id: qwato).shuffle
   end
 end
