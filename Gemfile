@@ -44,7 +44,7 @@ group :test do
   gem "faker"
 end
 group :production do
-  gem "http_parser.rb"
+  
   gem "pry-byebug"
   gem "pg"
   gem "rails_12factor"
