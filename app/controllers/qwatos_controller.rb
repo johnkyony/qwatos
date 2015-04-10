@@ -2,7 +2,7 @@ class QwatosController < ApplicationController
   
  
   def index
-    @qwatos = Qwato.all.order(created_at: :desc)
+    @qwatos = Qwato.all.shuffle
     
   end
 
