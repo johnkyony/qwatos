@@ -31,7 +31,7 @@ group :development do
   gem "better_errors"
   gem "binding_of_caller", platforms: :mri_21
   gem "quiet_assets"
-  
+  gem "pry-byebug"
   gem "pry-rails"
   gem "rails_layout"
   gem "rails_best_practices"
@@ -45,7 +45,7 @@ group :test do
 end
 group :production do
   
-  gem "pry-byebug"
+
   gem "pg"
   gem "rails_12factor"
 end
