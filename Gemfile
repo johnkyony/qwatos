@@ -21,7 +21,7 @@ gem "devise"
 gem "pundit"
 gem "haml-rails"
 gem "tumblr_client"
-
+gem 'rack-google-analytics'
 group :development do
   gem "erb2haml"
   gem 'sqlite3'
