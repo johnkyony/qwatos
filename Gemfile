@@ -20,6 +20,7 @@ gem "high_voltage"
 gem "devise"
 gem "pundit"
 gem "haml-rails"
+gem "tumblr_client"
 group :development do
   gem "erb2haml"
   gem 'sqlite3'

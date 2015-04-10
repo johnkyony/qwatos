@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'trending/index'
+
   #get 'admin_panel/index'
 
   #get 'likes_streams/index'
