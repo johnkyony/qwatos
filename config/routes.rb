@@ -14,7 +14,7 @@ Rails.application.routes.draw do
 
   end
 
-
+  resources :likes
   
 
   resources :artists do 
