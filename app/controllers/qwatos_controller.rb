@@ -11,7 +11,7 @@ class QwatosController < ApplicationController
     @qwato = Qwato.find(qwatos_params)
     
   end
-   def new
+  def new
     @qwato = Qwato.new
     
   end

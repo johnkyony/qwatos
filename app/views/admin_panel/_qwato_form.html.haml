@@ -1,14 +1,42 @@
+// .row
+//   .col-sm-6.col-md-4.col-md-offset-4
+//     - @artist.each do |artist|
+//       .thumbnail
+        
+//         = image_tag artist.avatar_url
+//         .caption
+//           = link_to artist.name , new_artist_qwato_path(artist)
+
+//           %br
+
+
+
+
+
 .row
   .col-sm-6.col-md-4.col-md-offset-4
-    - @artist.each do |artist|
-      .thumbnail
-        
-        = image_tag artist.avatar_url
-        .caption
-          = link_to artist.name , new_artist_qwato_path(artist)
-
-          %br
-
-
+    - @artist_qwato_pool.each do |qwato|
+      .thumbnail{:id => "qwato_#{qwato.id}"}
+        = image_tag qwato.image_url , alt: qwato.quote
+        %br/
+        - if user_signed_in?
+          / Twitter
+          %a.btn.btn-primary{:href => "http://twitter.com/home?status=#{qwato.image_url}", :target => "_blank", :title => "Share on Twitter"}
+            %i.fa.fa-twitter
+            Twitter
+          / Facebook
+          %a.btn.btn-primary{:href => "https://www.facebook.com/sharer/sharer.php?u=#{qwato.image_url}", :target => "_blank", :title => "Share on Facebook"}
+            %i.fa.fa-facebook
+            Facebook
+          = link_to(qwato_likes_path(qwato), |
+            method: :post ) do              |
+            = content_tag('i', nil, class: 'fa fa-thumbs-up fa-2x pull-right' )
+          = link_to(qwato_dislikes_path(qwato), |
+            method: :post ) do                 |
+            = content_tag('i', nil, class: 'fa fa-thumbs-down fa-2x pull-right' )
+        - else
+          = button_to "share" , user_registration_path , class: "btn btn-primary pull-left"
+          = button_to "like", user_registration_path, class: "btn btn-success "
+      %br/
 
 

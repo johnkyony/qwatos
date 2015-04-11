@@ -4,7 +4,8 @@ Rails.application.routes.draw do
   #get 'admin_panel/index'
 
   #get 'likes_streams/index'
-
+  
+  get 'tumblr_sessions/:action' , :to => 'sessions'
   
   resources :admin_panel
   devise_for :users , :controllers => {:omniauth_callbacks => "users/omniauth_callbacks"}
