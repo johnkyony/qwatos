@@ -12,7 +12,7 @@ class AdminPanelController < ApplicationController
       })
 
 
-    @artist_qwato_pool = client.tagged 'hip hop qoutes '
+    @artist_qwato_pool = client.tagged('hip hop qoutes')
      @artist_qwato_pool = @artist_qwato_pool["posts"]
   end
 end
