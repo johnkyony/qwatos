@@ -1,4 +1,4 @@
-require "tumblr_client"
+
 
 Tumblr.configure do |config|
     config.consumer_key = "LdyvjSqikz1dpZdt73FzYssRpsyHIr6IwER4KMv8STB9A8eFBD"
