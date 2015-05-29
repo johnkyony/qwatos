@@ -13,6 +13,6 @@ class AdminPanelController < ApplicationController
 
 
     @artist_qwato_pool = client.posts("drake", :type => "photo")
-     @artist_qwato_pool = @artist_qwato_pool["posts"]
+    
   end
 end
